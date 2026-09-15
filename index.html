@@ -34,10 +34,21 @@
   --edge-top: clamp(16px, 4vw, 32px);
 }
 html[data-theme="dark"]{
-  --bg: #1B1713; --bg-soft: #221D18; --surface: #262019; --surface-2: #2E271E;
-  --ink: #EFE5D7; --ink-soft: #C4B7A5; --ink-faint: #8A7C6B; --line: rgba(239,229,215,0.10);
-  --rust: #E08A5B; --rust-ink: #F2A87C; --moss: #A3B283; --moss-soft: #333624; --plum: #C48A97; --gold: #D9A94D;
-  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 30px -14px rgba(0,0,0,0.6);
+  --bg: #0F141C; 
+  --bg-soft: #161D27; 
+  --surface: #1B232E; 
+  --surface-2: #232D3B;
+  --ink: #EFE6D5; 
+  --ink-soft: #D9C3A5; 
+  --ink-faint: #9E907E; 
+  --line: rgba(239,230,213,0.12);
+  --rust: #C4AA82; 
+  --rust-ink: #E5D2B3; 
+  --moss: #8FA382; 
+  --moss-soft: #202A24; 
+  --plum: #A37F88; 
+  --gold: #D4AF37;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 30px -14px rgba(0,0,0,0.8);
 }
 html[data-theme="gray"]{
   --bg: #E7E7E4; --bg-soft: #DEDEDA; --surface: #F5F5F3; --surface-2: #EBEBE8;
@@ -68,7 +79,7 @@ input{font-family:inherit;}
 .brand .word{ font-family:var(--serif); font-weight:600; font-size:clamp(21px,5vw,27px); letter-spacing:-0.01em; color:var(--ink); }
 .brand .word em{font-style:italic; color:var(--rust); font-weight:500;}
 .clock{ display:flex; align-items:baseline; gap:10px; margin-top:2px; flex-wrap:wrap; }
-.clock .time{font-family:var(--serif); font-size:clamp(13px,3.4vw,15px); color:var(--ink-soft); font-variant-numeric: tabular-nums;}
+.clock .time{font-family:var(--serif); font-size:clamp(13px,3.4vw,15px); color:var(--ink-soft); font-variant-numeric: tabular-nums; font-weight:600;}
 .clock .date{font-size:clamp(11.5px,3vw,13px); color:var(--ink-faint);}
 
 .icon-btn{
@@ -83,6 +94,7 @@ input{font-family:inherit;}
 /* ============ VERSE STRIP ============ */
 .strip{ border-radius:var(--radius); padding:16px 18px; display:flex; gap:13px; align-items:flex-start; box-shadow:var(--shadow); }
 .strip-top{ background:linear-gradient(135deg, var(--plum), var(--rust-ink) 130%); color:#F7EFE4; margin-bottom:14px; }
+html[data-theme="dark"] .strip-top{ background:linear-gradient(135deg, #232D3B, #3D3226 130%); color:#EFE6D5; }
 html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B6864 130%);}
 .strip-bottom{ background:var(--surface-2); border:1px solid var(--line); color:var(--ink-soft); margin-top:26px; }
 .strip .mark{ font-family:var(--serif); font-size:28px; line-height:1; opacity:.55; flex-shrink:0; margin-top:-2px; }
@@ -117,8 +129,8 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
 
 .panel{ background:var(--surface); border-radius:var(--radius); border:1px solid var(--line); padding:16px; box-shadow:var(--shadow); }
 @media (min-width:1024px){.panel{padding:20px;}}
-.panel-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;}
-.panel-head h3{font-size:13px; margin:0; font-weight:600; color:var(--ink-soft);}
+.panel-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; flex-wrap:wrap; gap:6px;}
+.panel-head h3{font-size:13.5px; margin:0; font-weight:600; color:var(--ink-soft);}
 .panel-head .count{font-size:12px; color:var(--ink-faint);}
 
 /* quick add — single line */
@@ -126,6 +138,7 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
 .quick-input{ flex:1; min-width:0; padding:9px 12px; border-radius:9px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink); font-size:13.5px; }
 .quick-input:focus{outline:2px solid var(--rust); outline-offset:1px;}
 .quick-submit{ width:38px; height:38px; border-radius:9px; border:none; background:var(--rust); color:#fff; font-size:19px; cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center; line-height:1; }
+html[data-theme="dark"] .quick-submit{ color:#0F141C; font-weight:bold; }
 .quick-submit:hover{background:var(--rust-ink);}
 .quick-submit:active{transform:scale(.95);}
 
@@ -161,7 +174,9 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
 .time-pop .seg{display:flex; gap:5px; flex-wrap:wrap; margin-bottom:12px;}
 .time-pop .seg button{padding:6px 8px; font-size:10.5px; border-radius:7px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink-soft); cursor:pointer;}
 .time-pop .seg button.active{background:var(--rust); border-color:var(--rust); color:#fff;}
+html[data-theme="dark"] .time-pop .seg button.active{color:#0F141C;}
 .time-pop .btn-sm{width:100%; padding:8px; font-size:12.5px; border-radius:8px; border:none; background:var(--rust); color:#fff; cursor:pointer; font-weight:600;}
+html[data-theme="dark"] .time-pop .btn-sm{color:#0F141C;}
 
 .goal-item, .event-item{ display:flex; align-items:flex-start; gap:10px; padding:10px 8px; border-radius:var(--radius-sm); border-bottom:1px solid var(--line); }
 .goal-item:last-child, .event-item:last-child{border-bottom:none;}
@@ -194,7 +209,7 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
 .end-day-btn:active{transform:scale(.99);}
 
 /* --- Week view --- */
-.week-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:10px;}
+.week-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:10px; margin-top:20px;}
 @media (max-width:680px){.week-grid{grid-template-columns:repeat(auto-fit,minmax(104px,1fr));}}
 .week-day{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-sm); padding:12px 10px; cursor:pointer; min-height:150px; display:flex; flex-direction:column; gap:8px; transition:border-color .15s ease, transform .1s ease; }
 .week-day:hover{border-color:var(--rust); transform:translateY(-1px);}
@@ -211,7 +226,7 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
 /* --- Month view --- */
 .month-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:14px;}
 .month-head h2{font-family:var(--serif); font-size:clamp(18px,4.6vw,22px); margin:0; font-weight:600;}
-.month-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:6px;}
+.month-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:20px;}
 .month-dow{font-size:10px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); text-align:center; padding-bottom:4px; font-weight:600;}
 .month-cell{ aspect-ratio:1/0.85; border-radius:9px; border:1px solid var(--line); background:var(--surface); padding:6px; cursor:pointer; display:flex; flex-direction:column; align-items:flex-start; gap:4px; transition:border-color .15s ease; position:relative; }
 .month-cell:hover{border-color:var(--rust);}
@@ -233,6 +248,7 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
 .modal-actions{display:flex; gap:10px; margin-top:20px;}
 .btn{ flex:1; padding:11px; border-radius:10px; border:none; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit; }
 .btn-primary{background:var(--rust); color:#fff;}
+html[data-theme="dark"] .btn-primary{color:#0F141C;}
 .btn-primary:hover{background:var(--rust-ink);}
 .btn-ghost{background:transparent; color:var(--ink-soft); border:1px solid var(--line);}
 .btn-ghost:hover{border-color:var(--ink-faint);}
@@ -262,6 +278,7 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
 .move-pop.show{display:flex;}
 .move-pop input[type=date]{flex:1; padding:6px 8px; border-radius:7px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink); font-size:12px;}
 .move-pop button{padding:6px 10px; border-radius:7px; border:none; background:var(--rust); color:#fff; font-size:11.5px; cursor:pointer;}
+html[data-theme="dark"] .move-pop button{color:#0F141C;}
 .ref-done-note{text-align:center; color:var(--ink-faint); font-size:12.5px; padding:10px;}
 
 /* toast (reminder) */
@@ -290,6 +307,10 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
   <div class="topbar">
     <div class="brand">
       <div class="word" data-i18n="brand"><em>Мій день</em></div>
+      <div class="clock">
+        <span class="time" id="sysTime">00:00:00</span>
+        <span class="date" id="sysDate">—</span>
+      </div>
     </div>
     <button class="icon-btn" id="settingsBtn" aria-label="settings" title="settings">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
@@ -319,7 +340,10 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
       </div>
     </div>
     <div class="panel">
-      <div class="panel-head"><h3 data-i18n="scheduleHead">Розклад дня</h3><span class="count" id="planCount">0</span></div>
+      <div class="panel-head">
+        <h3><span data-i18n="scheduleHead">Розклад дня</span> <span id="plannedDayLabel" style="font-weight:normal; font-size:12px; opacity:0.8;"></span></h3>
+        <span class="count" id="planCount">0</span>
+      </div>
       <div class="quick-add">
         <input type="text" id="planQuickInput" class="quick-input" data-i18n-ph="planPh" placeholder="Що плануєте?">
         <div class="time-wrap">
@@ -419,7 +443,7 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
           <span data-i18n="themeLight">Світла</span>
         </div>
         <div class="opt-card" data-theme-opt="dark">
-          <div class="swatch-row"><span class="swatch" style="background:#1B1713"></span><span class="swatch" style="background:#E08A5B"></span></div>
+          <div class="swatch-row"><span class="swatch" style="background:#0F141C"></span><span class="swatch" style="background:#C4AA82"></span></div>
           <span data-i18n="themeDark">Темна</span>
         </div>
         <div class="opt-card" data-theme-opt="gray">
@@ -689,6 +713,19 @@ function renderQuotes(){
 =============================================================*/
 function tickClock(){
   const now = new Date();
+  
+  // Realtime System Clock update
+  const h = String(now.getHours()).padStart(2, "0");
+  const m = String(now.getMinutes()).padStart(2, "0");
+  const s = String(now.getSeconds()).padStart(2, "0");
+  document.getElementById("sysTime").textContent = `${h}:${m}:${s}`;
+  
+  const dict = I18N[settings.lang];
+  const dayIdx = (now.getDay() + 6) % 7;
+  const dayName = dict.weekdaysFull[dayIdx];
+  const monthName = dict.monthsFull[now.getMonth()];
+  document.getElementById("sysDate").textContent = `${dayName}, ${now.getDate()} ${monthName} ${now.getFullYear()} р.`;
+
   checkReminders(now);
 }
 let audioCtx = null;
@@ -802,6 +839,12 @@ function fullScreenSalute(){
 function renderDay(){
   const dict = I18N[settings.lang];
   const bucket = dayBucket(currentDay);
+
+  // Dynamic Planned Day Display
+  const dayIdx = (currentDay.getDay() + 6) % 7;
+  const dayName = dict.weekdaysFull[dayIdx];
+  const monthName = dict.monthsFull[currentDay.getMonth()];
+  document.getElementById("plannedDayLabel").textContent = `— ${dayName}, ${currentDay.getDate()} ${monthName} ${currentDay.getFullYear()} р.`;
 
   const planList = document.getElementById("planList");
   planList.innerHTML = "";
