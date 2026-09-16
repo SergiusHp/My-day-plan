@@ -6,7 +6,7 @@
 <title>Мій день — планувальник</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============ TOKENS ============ */
 :root{
@@ -57,6 +57,117 @@ html[data-theme="gray"]{
   --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 8px 24px -12px rgba(0,0,0,0.16);
 }
 
+/* ============ MARVEL THEME (optional, comic-book style) ============ */
+html[data-theme="marvel"]{
+  --bg: #F4E9C9; --bg-soft: #EEDDA8; --surface: #FFFDF6; --surface-2: #FFF3D6;
+  --ink: #151316; --ink-soft: #3C3540; --ink-faint: #7A7284; --line: #151316;
+  --rust: #ED1D24; --rust-ink: #A80F17; --moss: #1D7A46; --moss-soft: #D9F0E1;
+  --plum: #3A3ED6; --gold: #FFC400;
+  --shadow: 3px 3px 0 var(--ink);
+  --radius: 12px; --radius-sm: 8px;
+}
+html[data-theme="marvel"] body{
+  background-image: radial-gradient(circle, rgba(21,19,22,0.14) 1.1px, transparent 1.1px);
+  background-size: 16px 16px;
+}
+html[data-theme="marvel"] .brand .word{
+  font-family:'Fredoka','Work Sans',sans-serif; text-transform:uppercase; -webkit-text-stroke:0.6px var(--ink);
+  text-shadow:2px 2px 0 var(--gold);
+}
+html[data-theme="marvel"] .brand .word em{font-style:normal; -webkit-text-stroke:0.6px var(--ink);}
+html[data-theme="marvel"] .clock .time{background:var(--ink); color:var(--surface); padding:2px 8px; border-radius:6px;}
+html[data-theme="marvel"] .icon-btn,
+html[data-theme="marvel"] .day-nav button,
+html[data-theme="marvel"] .panel,
+html[data-theme="marvel"] .strip,
+html[data-theme="marvel"] .tabs,
+html[data-theme="marvel"] .week-day,
+html[data-theme="marvel"] .month-cell,
+html[data-theme="marvel"] .modal,
+html[data-theme="marvel"] .quick-submit,
+html[data-theme="marvel"] .chk,
+html[data-theme="marvel"] .btn,
+html[data-theme="marvel"] .opt-card,
+html[data-theme="marvel"] .end-day-btn,
+html[data-theme="marvel"] .time-pop,
+html[data-theme="marvel"] .toast{
+  border-width:2px; border-style:solid; border-color:var(--line) !important;
+}
+html[data-theme="marvel"] .icon-btn:hover{transform:translate(-1px,-1px); box-shadow:4px 4px 0 var(--ink);}
+html[data-theme="marvel"] .day-nav button,
+html[data-theme="marvel"] .btn,
+html[data-theme="marvel"] .quick-submit{box-shadow:3px 3px 0 var(--ink);}
+html[data-theme="marvel"] .day-nav button:active,
+html[data-theme="marvel"] .btn:active,
+html[data-theme="marvel"] .quick-submit:active{transform:translate(2px,2px); box-shadow:none;}
+html[data-theme="marvel"] .modal{box-shadow:6px 6px 0 var(--ink);}
+html[data-theme="marvel"] .modal h3{font-family:'Fredoka','Work Sans',sans-serif; text-transform:uppercase;}
+html[data-theme="marvel"] .tab.active{background:var(--rust); color:#fff;}
+html[data-theme="marvel"] .strip-top{background:var(--surface); color:var(--ink); position:relative;}
+html[data-theme="marvel"] .strip-top::after{
+  content:""; position:absolute; left:28px; bottom:-14px; width:0; height:0;
+  border-left:10px solid transparent; border-right:10px solid transparent; border-top:14px solid var(--ink);
+}
+html[data-theme="marvel"] .strip-top::before{
+  content:""; position:absolute; left:29.5px; bottom:-10.5px; width:0; height:0; z-index:1;
+  border-left:8.5px solid transparent; border-right:8.5px solid transparent; border-top:11px solid var(--surface);
+}
+html[data-theme="marvel"] .strip .mark{color:var(--rust); font-weight:700;}
+html[data-theme="marvel"] .strip .cite{color:var(--rust-ink); font-weight:700;}
+html[data-theme="marvel"] .opt-card.active{background:var(--rust); color:#fff; border-color:var(--line);}
+html[data-theme="marvel"] .end-day-btn{background:var(--gold); color:var(--ink); text-transform:uppercase;}
+html[data-theme="marvel"] .end-day-btn:hover{background:var(--rust); color:#fff;}
+html[data-theme="marvel"] .week-day.today,
+html[data-theme="marvel"] .month-cell.today{box-shadow:2px 2px 0 var(--rust);}
+html[data-theme="marvel"] .m-dot{background:var(--moss);}
+html[data-theme="marvel"] .m-dot.evt{background:var(--rust);}
+
+/* ============ NATURE THEME (optional, warm & organic style) ============ */
+html[data-theme="nature"]{
+  --bg: #F4EEDF; --bg-soft: #EBE1C8; --surface: #FFFEFB; --surface-2: #F4EFE1;
+  --ink: #2B2A22; --ink-soft: #5B5A48; --ink-faint: #93907A; --line: rgba(43,42,34,0.10);
+  --rust: #2F5D3E; --rust-ink: #1E3E29; --moss: #6E9080; --moss-soft: #E3EEE6;
+  --plum: #4A6741; --gold: #C79A2E;
+  --shadow: 0 8px 22px -10px rgba(43,42,34,0.28);
+  --radius: 18px; --radius-sm: 12px;
+}
+html[data-theme="nature"] body{
+  background: linear-gradient(180deg, #E9DCC0 0%, #F4EEDF 380px, #F4EEDF 100%);
+}
+html[data-theme="nature"] .icon-btn{border-color:transparent; background:rgba(255,255,255,.55);}
+html[data-theme="nature"] .icon-btn:hover{color:var(--rust); border-color:var(--rust);}
+html[data-theme="nature"] .tabs{background:rgba(255,255,255,.5); border-radius:999px; padding:5px;}
+html[data-theme="nature"] .tab{border-radius:999px; font-weight:600;}
+html[data-theme="nature"] .tab.active{background:var(--rust); color:#fff; box-shadow:0 4px 12px -4px rgba(47,93,62,.55);}
+html[data-theme="nature"] .strip{border-radius:20px;}
+html[data-theme="nature"] .strip-top{background:var(--surface); color:var(--ink); position:relative; overflow:hidden;}
+html[data-theme="nature"] .strip-top::after{
+  content:"🌿"; position:absolute; right:14px; bottom:8px; font-size:38px; opacity:.35; line-height:1; transform:rotate(-8deg);
+}
+html[data-theme="nature"] .strip .mark{color:var(--gold);}
+html[data-theme="nature"] .strip .cite{text-transform:uppercase; letter-spacing:.06em; font-weight:700; color:var(--ink-soft); border-top:1.5px solid var(--gold); padding-top:8px; display:inline-block;}
+html[data-theme="nature"] .panel{border-radius:20px; box-shadow:var(--shadow); border:none;}
+html[data-theme="nature"] .day-nav button, html[data-theme="nature"] .tab:not(.active){background:rgba(255,255,255,.6); border-color:transparent;}
+html[data-theme="nature"] .day-nav button:hover{border-color:var(--rust); color:var(--rust-ink);}
+html[data-theme="nature"] #dayToday{background:rgba(255,255,255,.75) !important;}
+html[data-theme="nature"] .chk{border-color:var(--moss);}
+html[data-theme="nature"] .chk.done{background:var(--rust); border-color:var(--rust);}
+html[data-theme="nature"] .quick-submit{background:var(--rust); border-radius:12px;}
+html[data-theme="nature"] .quick-submit:hover{background:var(--rust-ink);}
+html[data-theme="nature"] .clock-btn.set{color:var(--rust-ink); background:var(--moss-soft);}
+html[data-theme="nature"] .end-day-btn{background:linear-gradient(135deg, var(--rust), var(--rust-ink)); color:#fff; border:none; border-radius:16px;}
+html[data-theme="nature"] .end-day-btn:hover{filter:brightness(1.08);}
+html[data-theme="nature"] .week-day, html[data-theme="nature"] .month-cell{border-radius:14px; border-color:transparent; background:rgba(255,255,255,.6);}
+html[data-theme="nature"] .week-day.today, html[data-theme="nature"] .month-cell.today{border-color:var(--rust); background:var(--moss-soft);}
+html[data-theme="nature"] .m-dot{background:var(--moss);}
+html[data-theme="nature"] .m-dot.evt{background:var(--rust);}
+html[data-theme="nature"] .opt-card.active{background:var(--rust); color:#fff; border-color:var(--rust);}
+html[data-theme="nature"] .btn-primary{background:var(--rust);}
+html[data-theme="nature"] .btn-primary:hover{background:var(--rust-ink);}
+html[data-theme="nature"] .modal{border-radius:20px;}
+html[data-theme="nature"] .footer-note{position:relative; padding-top:22px;}
+html[data-theme="nature"] .footer-note::before{content:"⛰"; position:absolute; top:0; left:50%; transform:translateX(-50%); font-size:16px; opacity:.45; color:var(--ink-faint);}
+
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
 html,body{height:100%;}
 body{
@@ -74,11 +185,11 @@ input{font-family:inherit;}
 @media (max-width:379px){ .app{ padding-left:12px; padding-right:12px; } }
 
 /* ============ HEADER ============ */
-.topbar{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:18px; }
-.brand{display:flex; flex-direction:column; gap:2px;}
+.topbar{ display:grid; grid-template-columns:42px 1fr 42px; align-items:center; gap:10px; margin-bottom:18px; }
+.brand{display:flex; flex-direction:column; gap:2px; grid-column:2; align-items:center; text-align:center;}
 .brand .word{ font-family:var(--serif); font-weight:600; font-size:clamp(21px,5vw,27px); letter-spacing:-0.01em; color:var(--ink); }
 .brand .word em{font-style:italic; color:var(--rust); font-weight:500;}
-.clock{ display:flex; align-items:baseline; gap:10px; margin-top:2px; flex-wrap:wrap; }
+.clock{ display:none; }
 .clock .time{font-family:var(--serif); font-size:clamp(13px,3.4vw,15px); color:var(--ink-soft); font-variant-numeric: tabular-nums; font-weight:600;}
 .clock .date{font-size:clamp(11.5px,3vw,13px); color:var(--ink-faint);}
 
@@ -86,6 +197,7 @@ input{font-family:inherit;}
   width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--surface);
   display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink-soft); flex-shrink:0;
   transition:transform .15s ease, border-color .15s ease, color .15s ease; box-shadow:var(--shadow);
+  grid-column:3; justify-self:end;
 }
 .icon-btn:hover{color:var(--rust); border-color:var(--rust);}
 .icon-btn:active{transform:scale(0.94);}
@@ -96,19 +208,16 @@ input{font-family:inherit;}
 .strip-top{ background:linear-gradient(135deg, var(--plum), var(--rust-ink) 130%); color:#F7EFE4; margin-bottom:14px; }
 html[data-theme="dark"] .strip-top{ background:linear-gradient(135deg, #232D3B, #3D3226 130%); color:#EFE6D5; }
 html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B6864 130%);}
-.strip-bottom{ background:var(--surface-2); border:1px solid var(--line); color:var(--ink-soft); margin-top:26px; }
 .strip .mark{ font-family:var(--serif); font-size:28px; line-height:1; opacity:.55; flex-shrink:0; margin-top:-2px; }
-.strip-bottom .mark{color:var(--moss);}
 .strip .txt{flex:1; min-width:0;}
 .strip .quote{font-family:var(--serif); font-size:clamp(14.5px,3.6vw,16.5px); line-height:1.5; font-style:italic;}
 .strip-top .quote{font-weight:500;}
 .strip .cite{font-size:12px; margin-top:8px; opacity:.8; letter-spacing:.01em;}
-.strip-bottom .cite{color:var(--rust);}
 
 /* ============ TABS ============ */
-.tabs-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:18px; }
-.tabs{ display:flex; gap:6px; background:var(--bg-soft); padding:5px; border-radius:12px; width:max-content; max-width:100%; }
-.tab{ border:none; background:transparent; padding:9px 16px; border-radius:8px; font-size:13.5px; font-weight:600; color:var(--ink-faint); cursor:pointer; transition:all .15s ease; white-space:nowrap; }
+.tabs-row{ display:flex; justify-content:center; margin-bottom:14px; }
+.tabs{ display:flex; gap:4px; background:var(--bg-soft); padding:4px; border-radius:12px; width:max-content; max-width:100%; margin:0 auto; }
+.tab{ border:none; background:transparent; padding:8px 12px; border-radius:8px; font-size:12.5px; font-weight:600; color:var(--ink-faint); cursor:pointer; transition:all .15s ease; white-space:nowrap; }
 .tab.active{background:var(--surface); color:var(--rust-ink); box-shadow:var(--shadow);}
 .tab:not(.active):hover{color:var(--ink-soft);}
 
@@ -119,9 +228,10 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
 
 .day-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:16px; gap:10px; flex-wrap:wrap;}
 .day-head h2{font-family:var(--serif); font-size:clamp(18px,4.6vw,22px); margin:0; font-weight:600;}
-.day-nav{display:flex; gap:6px;}
-.day-nav button{ width:34px; height:34px; border-radius:8px; border:1px solid var(--line); background:var(--surface); color:var(--ink-soft); cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.day-nav{display:flex; gap:5px; flex-shrink:0;}
+.day-nav button{ width:34px; height:34px; border-radius:8px; border:1px solid var(--line); background:var(--surface); color:var(--ink-soft); cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .day-nav button:hover{border-color:var(--rust); color:var(--rust);}
+#dayToday{width:auto !important; padding:0 9px !important; font-size:11.5px !important; white-space:nowrap;}
 
 .columns{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
 @media (max-width:680px){.columns{grid-template-columns:1fr;}}
@@ -135,18 +245,19 @@ html[data-theme="gray"] .strip-top{background:linear-gradient(135deg,#4A4744,#6B
 
 /* quick add — single line */
 .quick-add{display:flex; gap:8px; align-items:stretch; margin-bottom:12px;}
-.quick-input{ flex:1; min-width:0; padding:9px 12px; border-radius:9px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink); font-size:13.5px; }
+.input-time-wrap{position:relative; flex:1; min-width:0; display:flex; align-items:center;}
+.quick-input{ width:100%; min-width:0; padding:9px 94px 9px 12px; border-radius:9px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink); font-size:16px; }
 .quick-input:focus{outline:2px solid var(--rust); outline-offset:1px;}
 .quick-submit{ width:38px; height:38px; border-radius:9px; border:none; background:var(--rust); color:#fff; font-size:19px; cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center; line-height:1; }
 html[data-theme="dark"] .quick-submit{ color:#0F141C; font-weight:bold; }
 .quick-submit:hover{background:var(--rust-ink);}
 .quick-submit:active{transform:scale(.95);}
 
-.time-wrap{position:relative; flex-shrink:0; display:flex; align-items:center; gap:4px;}
-.clock-btn{ height:38px; padding:0 10px; border-radius:9px; border:1px solid var(--line); background:var(--surface); color:var(--ink-soft); cursor:pointer; display:flex; align-items:center; gap:5px; font-size:11.5px; font-weight:700; white-space:nowrap; }
-.clock-btn:hover{border-color:var(--rust); color:var(--rust);}
+.time-wrap{position:absolute; right:6px; top:0; bottom:0; flex-shrink:0; display:flex; align-items:center; gap:2px;}
+.clock-btn{ height:28px; padding:0 6px; border-radius:7px; border:none; background:transparent; color:var(--ink-faint); cursor:pointer; display:flex; align-items:center; gap:4px; font-size:11.5px; font-weight:700; white-space:nowrap; }
+.clock-btn:hover{color:var(--rust);}
 .clock-btn svg{width:15px;height:15px;flex-shrink:0;}
-.clock-btn.set{border-color:var(--rust); color:var(--rust-ink); background:var(--surface-2);}
+.clock-btn.set{color:var(--rust-ink); background:var(--surface-2); border-radius:7px;}
 .clear-time-btn{ width:22px; height:22px; border-radius:50%; border:none; background:var(--surface-2); color:var(--ink-faint); font-size:14px; line-height:1; cursor:pointer; flex-shrink:0; }
 .clear-time-btn:hover{color:var(--rust-ink);}
 
@@ -161,7 +272,7 @@ html[data-theme="dark"] .quick-submit{ color:#0F141C; font-weight:bold; }
 }
 .time-pop.show{display:block; animation:fade .15s ease;}
 .time-pop .tp-label{display:block; font-size:11.5px; color:var(--ink-soft); margin-bottom:6px; font-weight:600;}
-.time-pop input[type=time]{width:100%; padding:8px 10px; border-radius:8px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink); font-size:13px; margin-bottom:12px;}
+.time-pop input[type=time]{width:100%; padding:8px 10px; border-radius:8px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink); font-size:16px; margin-bottom:12px;}
 .time-select-row{ display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px; }
 .time-select{
   appearance:none; -webkit-appearance:none;
@@ -171,8 +282,8 @@ html[data-theme="dark"] .quick-submit{ color:#0F141C; font-weight:bold; }
 }
 .time-select:focus{outline:2px solid var(--rust); outline-offset:1px;}
 .time-colon{font-size:17px; font-weight:700; color:var(--ink-faint);}
-.time-pop .seg{display:flex; gap:5px; flex-wrap:wrap; margin-bottom:12px;}
-.time-pop .seg button{padding:6px 8px; font-size:10.5px; border-radius:7px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink-soft); cursor:pointer;}
+.time-pop .seg{display:flex; gap:4px; flex-wrap:nowrap; margin-bottom:12px;}
+.time-pop .seg button{flex:1; min-width:0; padding:6px 2px; font-size:10.5px; border-radius:7px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink-soft); cursor:pointer; white-space:nowrap;}
 .time-pop .seg button.active{background:var(--rust); border-color:var(--rust); color:#fff;}
 html[data-theme="dark"] .time-pop .seg button.active{color:#0F141C;}
 .time-pop .btn-sm{width:100%; padding:8px; font-size:12.5px; border-radius:8px; border:none; background:var(--rust); color:#fff; cursor:pointer; font-weight:600;}
@@ -276,7 +387,7 @@ html[data-theme="dark"] .btn-primary{color:#0F141C;}
 .ref-actions button.move{border-color:var(--rust); color:var(--rust-ink);}
 .move-pop{display:none; gap:6px; margin-top:8px;}
 .move-pop.show{display:flex;}
-.move-pop input[type=date]{flex:1; padding:6px 8px; border-radius:7px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink); font-size:12px;}
+.move-pop input[type=date]{flex:1; padding:6px 8px; border-radius:7px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink); font-size:16px;}
 .move-pop button{padding:6px 10px; border-radius:7px; border:none; background:var(--rust); color:#fff; font-size:11.5px; cursor:pointer;}
 html[data-theme="dark"] .move-pop button{color:#0F141C;}
 .ref-done-note{text-align:center; color:var(--ink-faint); font-size:12.5px; padding:10px;}
@@ -296,7 +407,7 @@ html[data-theme="dark"] .move-pop button{color:#0F141C;}
 /* touch target comfort on small phones */
 @media (max-width:400px){
   .icon-btn{width:40px; height:40px;}
-  .quick-submit, .clock-btn{height:40px;}
+  .quick-submit{height:40px;}
   .tab{padding:8px 12px;}
 }
 </style>
@@ -308,7 +419,7 @@ html[data-theme="dark"] .move-pop button{color:#0F141C;}
     <div class="brand">
       <div class="word" data-i18n="brand"><em>Мій день</em></div>
       <div class="clock">
-        <span class="time" id="sysTime">00:00:00</span>
+        <span class="time" id="sysTime">00:00</span>
         <span class="date" id="sysDate">—</span>
       </div>
     </div>
@@ -327,48 +438,53 @@ html[data-theme="dark"] .move-pop button{color:#0F141C;}
 
   <!-- DAY VIEW -->
   <div class="view active" id="view-day">
-    <div class="tabs-row">
-      <div class="tabs">
-        <button class="tab active" data-view="day" data-i18n="tabDay">День</button>
-        <button class="tab" data-view="week" data-i18n="tabWeek">Тиждень</button>
-        <button class="tab" data-view="month" data-i18n="tabMonth">Місяць</button>
-      </div>
+    <div class="day-head">
+      <h2 id="dayLabel" style="margin-left:6px;">—</h2>
       <div class="day-nav">
         <button id="dayPrev" aria-label="prev">‹</button>
         <button id="dayToday" data-i18n="today" style="width:auto;padding:0 10px;font-size:12px;">Сьогодні</button>
         <button id="dayNext" aria-label="next">›</button>
       </div>
     </div>
+    <div class="tabs-row">
+      <div class="tabs">
+        <button class="tab active" data-view="day" data-i18n="tabDay">День</button>
+        <button class="tab" data-view="week" data-i18n="tabWeek">Тиждень</button>
+        <button class="tab" data-view="month" data-i18n="tabMonth">Місяць</button>
+      </div>
+    </div>
     <div class="panel">
       <div class="panel-head">
-        <h3><span data-i18n="scheduleHead">Розклад дня</span> <span id="plannedDayLabel" style="font-weight:normal; font-size:12px; opacity:0.8;"></span></h3>
+        <h3><span data-i18n="scheduleHead">Розклад дня</span></h3>
         <span class="count" id="planCount">0</span>
       </div>
       <div class="quick-add">
-        <input type="text" id="planQuickInput" class="quick-input" data-i18n-ph="planPh" placeholder="Що плануєте?">
-        <div class="time-wrap">
-          <button class="clock-btn" id="planClockBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            <span id="planTimeBadge" data-i18n="noTimeShort">час</span>
-          </button>
-          <button class="clear-time-btn" id="planClearTime" type="button" title="прибрати час" style="display:none;">×</button>
-          <div class="time-pop-backdrop" id="timePopBackdrop"></div>
-          <div class="time-pop" id="planTimePop">
-            <span class="tp-label" data-i18n="timeLabel">Час</span>
-            <div class="time-select-row">
-              <select id="popHour" class="time-select"></select>
-              <span class="time-colon">:</span>
-              <select id="popMinute" class="time-select"></select>
+        <div class="input-time-wrap">
+          <input type="text" id="planQuickInput" class="quick-input" data-i18n-ph="planPh" placeholder="Що плануєте?">
+          <div class="time-wrap">
+            <button class="clock-btn" id="planClockBtn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <span id="planTimeBadge" data-i18n="noTimeShort">час</span>
+            </button>
+            <button class="clear-time-btn" id="planClearTime" type="button" title="прибрати час" style="display:none;">×</button>
+            <div class="time-pop-backdrop" id="timePopBackdrop"></div>
+            <div class="time-pop" id="planTimePop">
+              <span class="tp-label" data-i18n="timeLabel">Час</span>
+              <div class="time-select-row">
+                <select id="popHour" class="time-select"></select>
+                <span class="time-colon">:</span>
+                <select id="popMinute" class="time-select"></select>
+              </div>
+              <span class="tp-label" data-i18n="reminderLabel">Нагадати заздалегідь</span>
+              <div class="seg" id="popReminderSeg">
+                <button type="button" data-val="0" class="active" data-i18n="remNone">Без</button>
+                <button type="button" data-val="5">5 хв</button>
+                <button type="button" data-val="10">10 хв</button>
+                <button type="button" data-val="15">15 хв</button>
+                <button type="button" data-val="30">30 хв</button>
+              </div>
+              <button class="btn-sm" id="popApply" type="button" data-i18n="applyBtn">Готово</button>
             </div>
-            <span class="tp-label" data-i18n="reminderLabel">Нагадати заздалегідь</span>
-            <div class="seg" id="popReminderSeg">
-              <button type="button" data-val="0" class="active" data-i18n="remNone">Без</button>
-              <button type="button" data-val="5">5 хв</button>
-              <button type="button" data-val="10">10 хв</button>
-              <button type="button" data-val="15">15 хв</button>
-              <button type="button" data-val="30">30 хв</button>
-            </div>
-            <button class="btn-sm" id="popApply" type="button" data-i18n="applyBtn">Готово</button>
           </div>
         </div>
         <button class="quick-submit" id="planQuickSubmit" aria-label="add">+</button>
@@ -413,14 +529,6 @@ html[data-theme="dark"] .move-pop button{color:#0F141C;}
   </div>
 
 
-  <div class="strip strip-bottom">
-    <div class="mark">❁</div>
-    <div class="txt">
-      <div class="quote" id="motText">—</div>
-      <div class="cite" id="motCite">—</div>
-    </div>
-  </div>
-
   <div class="footer-note" data-i18n="footerNote">Дані зберігаються лише у вашому браузері, на цьому пристрої.</div>
 </div>
 
@@ -433,6 +541,13 @@ html[data-theme="dark"] .move-pop button{color:#0F141C;}
       <div class="opt-row">
         <div class="opt-card" data-lang="ua">Українська</div>
         <div class="opt-card" data-lang="en">English</div>
+      </div>
+    </div>
+    <div class="field">
+      <label data-i18n="quoteSourceLabel">Цитата дня</label>
+      <div class="opt-row">
+        <div class="opt-card" data-quote-src="bible" data-i18n="quoteSourceBible">Біблія</div>
+        <div class="opt-card" data-quote-src="motiv" data-i18n="quoteSourceMotiv">Мотиватор</div>
       </div>
     </div>
     <div class="field">
@@ -449,6 +564,14 @@ html[data-theme="dark"] .move-pop button{color:#0F141C;}
         <div class="opt-card" data-theme-opt="gray">
           <div class="swatch-row"><span class="swatch" style="background:#E7E7E4"></span><span class="swatch" style="background:#6B6864"></span></div>
           <span data-i18n="themeGray">Сіра</span>
+        </div>
+        <div class="opt-card" data-theme-opt="marvel">
+          <div class="swatch-row"><span class="swatch" style="background:#151316"></span><span class="swatch" style="background:#ED1D24"></span></div>
+          <span data-i18n="themeMarvel">Marvel</span>
+        </div>
+        <div class="opt-card" data-theme-opt="nature">
+          <div class="swatch-row"><span class="swatch" style="background:#F4EEDF"></span><span class="swatch" style="background:#2F5D3E"></span></div>
+          <span data-i18n="themeNature">Природа</span>
         </div>
       </div>
     </div>
@@ -523,7 +646,8 @@ const I18N = {
     noTimeSection:"Без часу", timedSection:"За годинами",
     cancel:"Скасувати", save:"Зберегти", done:"Готово",
     settingsTitle:"Налаштування", langLabel:"Мова", themeLabel:"Тема",
-    themeLight:"Світла", themeDark:"Темна", themeGray:"Сіра",
+    quoteSourceLabel:"Цитата дня", quoteSourceBible:"Біблія", quoteSourceMotiv:"Мотиватор",
+    themeLight:"Світла", themeDark:"Темна", themeGray:"Сіра", themeMarvel:"Marvel", themeNature:"Природа",
     soundLabel:"Звук нагадування", soundChime:"М'який дзвіночок", soundBell:"Дзвін", soundOff:"Без звуку",
     footerNote:"Дані зберігаються лише у вашому браузері, на цьому пристрої.",
     emptyPlan:"На цей день ще нічого не заплановано.",
@@ -557,7 +681,8 @@ const I18N = {
     noTimeSection:"No time", timedSection:"Scheduled",
     cancel:"Cancel", save:"Save", done:"Done",
     settingsTitle:"Settings", langLabel:"Language", themeLabel:"Theme",
-    themeLight:"Light", themeDark:"Dark", themeGray:"Gray",
+    quoteSourceLabel:"Quote of the day", quoteSourceBible:"Bible", quoteSourceMotiv:"Motivator",
+    themeLight:"Light", themeDark:"Dark", themeGray:"Gray", themeMarvel:"Marvel", themeNature:"Nature",
     soundLabel:"Reminder sound", soundChime:"Soft chime", soundBell:"Bell", soundOff:"No sound",
     footerNote:"Your data stays only in this browser, on this device.",
     emptyPlan:"Nothing planned for this day yet.",
@@ -664,7 +789,8 @@ const MOTIV = [
 /* ============================================================
    STATE
 =============================================================*/
-let settings = loadJSON("provid_settings", {lang:"ua", theme:"light", sound:"chime"});
+let settings = loadJSON("provid_settings", {lang:"ua", theme:"light", sound:"chime", quoteSource:"bible"});
+if(!settings.quoteSource) settings.quoteSource = "bible";
 let data = loadJSON("provid_data", {}); // { 'YYYY-MM-DD': {goals:[{id,text,done}], events:[{id,text,time,reminder,fired,done}]} }
 
 let currentDay = new Date();
@@ -698,14 +824,20 @@ function applyI18nStatic(){
   document.documentElement.lang = settings.lang === "ua" ? "uk" : "en";
 }
 function renderQuotes(){
-  const idx = dayOfYear(new Date()) % BIBLE.length;
-  const b = BIBLE[idx];
-  document.getElementById("verseText").textContent = settings.lang==="ua" ? b.ua : b.en;
-  document.getElementById("verseCite").textContent = settings.lang==="ua" ? b.ref : b.ref_en;
-  const midx = dayOfYear(new Date()) % MOTIV.length;
-  const m = MOTIV[midx];
-  document.getElementById("motText").textContent = settings.lang==="ua" ? m.ua : m.en;
-  document.getElementById("motCite").textContent = "— " + (settings.lang==="ua" ? m.author : m.author_en);
+  const markEl = document.querySelector(".strip-top .mark");
+  if(settings.quoteSource === "motiv"){
+    const midx = dayOfYear(new Date()) % MOTIV.length;
+    const m = MOTIV[midx];
+    document.getElementById("verseText").textContent = settings.lang==="ua" ? m.ua : m.en;
+    document.getElementById("verseCite").textContent = "— " + (settings.lang==="ua" ? m.author : m.author_en);
+    if(markEl) markEl.textContent = "❁";
+  }else{
+    const idx = dayOfYear(new Date()) % BIBLE.length;
+    const b = BIBLE[idx];
+    document.getElementById("verseText").textContent = settings.lang==="ua" ? b.ua : b.en;
+    document.getElementById("verseCite").textContent = settings.lang==="ua" ? b.ref : b.ref_en;
+    if(markEl) markEl.textContent = "\"";
+  }
 }
 
 /* ============================================================
@@ -717,8 +849,7 @@ function tickClock(){
   // Realtime System Clock update
   const h = String(now.getHours()).padStart(2, "0");
   const m = String(now.getMinutes()).padStart(2, "0");
-  const s = String(now.getSeconds()).padStart(2, "0");
-  document.getElementById("sysTime").textContent = `${h}:${m}:${s}`;
+  document.getElementById("sysTime").textContent = `${h}:${m}`;
   
   const dict = I18N[settings.lang];
   const dayIdx = (now.getDay() + 6) % 7;
@@ -840,11 +971,11 @@ function renderDay(){
   const dict = I18N[settings.lang];
   const bucket = dayBucket(currentDay);
 
-  // Dynamic Planned Day Display
+  // Dynamic Day Label (day name + date number), shown next to the day switcher
   const dayIdx = (currentDay.getDay() + 6) % 7;
   const dayName = dict.weekdaysFull[dayIdx];
   const monthName = dict.monthsFull[currentDay.getMonth()];
-  document.getElementById("plannedDayLabel").textContent = `— ${dayName}, ${currentDay.getDate()} ${monthName} ${currentDay.getFullYear()} р.`;
+  document.getElementById("dayLabel").textContent = `${dayName}, ${currentDay.getDate()}`;
 
   const planList = document.getElementById("planList");
   planList.innerHTML = "";
@@ -1066,11 +1197,17 @@ function refreshSettingsUI(){
   document.querySelectorAll("[data-lang]").forEach(el=>el.classList.toggle("active", el.dataset.lang===settings.lang));
   document.querySelectorAll("[data-theme-opt]").forEach(el=>el.classList.toggle("active", el.dataset.themeOpt===settings.theme));
   document.querySelectorAll("[data-sound]").forEach(el=>el.classList.toggle("active", el.dataset.sound===settings.sound));
+  document.querySelectorAll("[data-quote-src]").forEach(el=>el.classList.toggle("active", el.dataset.quoteSrc===settings.quoteSource));
 }
 document.querySelectorAll("[data-lang]").forEach(el=>{
   el.addEventListener("click", ()=>{
     settings.lang = el.dataset.lang; saveSettings(); refreshSettingsUI();
     applyI18nStatic(); renderQuotes(); renderDay(); renderWeek(); renderMonth(); tickClock();
+  });
+});
+document.querySelectorAll("[data-quote-src]").forEach(el=>{
+  el.addEventListener("click", ()=>{
+    settings.quoteSource = el.dataset.quoteSrc; saveSettings(); refreshSettingsUI(); renderQuotes();
   });
 });
 document.querySelectorAll("[data-theme-opt]").forEach(el=>{
